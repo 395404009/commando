@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+body{text-align:center;background-color:#f8f8f8;}
+*{font-size:20px;margin:0;padding:0;}
+a,a:focus{text-decoration:none;color:#0066cc;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#aaaaaa;text-decoration:none;}
+
+/**index.jsp**/
+.top{position:relative;border:solid 1px #eeeeee;margin:0 auto;height:88px;width:880px;background-color:#eeeeee;}
+.logo{float:left;position:relative; background:url(images/logo.png) no-repeat;margin-left:0px;}
+.theme{float:left;position:relative; top:20px;font-size:33px;margin-left:20px;color:#3399ff;font-family:"微软雅黑";}
+.login{float:left;position:relative;top:65px;left:120px;}
+.login a{font-size:16px;}
+.bar{float:left;position:relative;top:55px;left:60px;width:300px;height:30px;}
+.bar a{color:#B8860B;}
+.bar a:hover{color:#336688;text-decoration:none;}
+.bar span{margin:5px;font-size:18px;color:#B8860B;}
+.log{float:right;position:relative;font-size:16px;right:-40px;top:65px;color:#CD5C5C;}
+.top .userphoto{float:right;position:relative;width:55px;height:55px;border-radius:50%;top:5px;right:10px}
+.top .userphoto img{width:55px;height:55px;border-radius:50%;}
+.main{position:relative;border:solid 1px #eeeeee;top:0px;width:880px;height:200px;margin:0 auto;background-color:#FFFFFF;}
+.main .answer{border:solid 1px #ffffff;top:20px;position:relative;left:15px;width:850px;}
+.main .topic{border:solid 1px #eeeeee;height:60px;}
+.main .topic .title{font-size:24px;position:relative;margin-top:20px;font-weight:bold;}
+.main .topic .photo img{width:45px;height:45px;border-radius:50%}
+.main .topic .photo{position:absolute;width:45px;height:45px;margin:5px;border-radius:50%;}
+.main .topic .username{border:solid 1px #ffffff;position:absolute;width:80px;height:40px;margin-left:55px;margin-top:10px;}
+.main .topic  .us1{font-size:14px;}
+.us1 span{font-size:14px;font-weight:bold;float:left;font-family:"微软雅黑";}
+.us2 span{font-size:14px;color:#aaaaaa;float:left;}
+
+/**login.jsp**/
+.mainlogin{position:relative;border:solid 1px #eeeeee;width:880px;height:400px;margin:0 auto;background-color:#eeeeee;top:30px;}	
+.mainlogin span{position:relative;top:20px;font-size:28px;color:#336688;}
+.loginform{position:relative;top:50px;}
+.loginform input{width:300px;height:40px;margin:20px;border: 1px solid #ffffff;border-radius:5px;}
+.loginform .sub{background-color:#3366ff;color:#ffffff; border: 1px solid #ffffff;border-radius:5px;}
+/**register.jsp**/
+.main_register { position:relative;top:30px;background: #eeeeee; -webkit-border-radius: 5px;border-radius: 5px;padding: 20px;width:600px;margin:auto;}
+.main_register fieldset {border: none;margin-bottom: 10px;}
+.main_registert fieldset:last-of-type { margin-bottom: 0; }
+.main_register span {position:relative;color: #384313;font-size: 16px;font-weight: bold;padding-bottom: 30px;text-shadow: 0 1px 1px #c0d576;}
+.main_register > fieldset > legend:before {content: "Step " counter(fieldsets) ": ";counter-increment: fieldsets;}
+.main_register fieldset fieldset legend { color: #111111;font-size: 13px;font-weight: normal;padding-bottom: 0;}
+.main_register ol li {background: #b9cf6a; background: rgba(255, 255, 255, .3);border-color: #e3ebc3;border-color: rgba(255, 255, 255, .6);border-style: solid;border-width: 2px;-webkit-border-radius: 5px; line-height: 30px;list-style: none; padding: 5px 10px;margin-bottom: 2px;}
+.main_register ol ol li { background: none;border: none;float: left;}
+.main_register label { float: left;font-size: 13px; width: 110px;}
+.main_register fieldset fieldset label {background: none no-repeat left 50%;line-height: 15px;padding: 0 0 0 30px;width: auto;}
+.main_register fieldset fieldset label:hover { cursor: pointer; }
+.main_register input:not([type=radio]), form#payment textarea {background: #ffffff;border: #FC3 solid 1px;-webkit-border-radius: 3px;font: italic 13px Georgia, "Times New Roman", Times, serif;outline: none;padding: 5px;width: 200px;}
+.main_register input:not([type=submit]):focus, form#payment textarea:focus {background: #eaeaea;border: #F00 solid 1px;}
+.main_register input[type=radio] {float: left;margin-right: 5px;}
+/**mypage.jsp**/
+.main .topic .del{position:relative;left:400px;top:-40px;}
+.main .topic .del a{font-size:12px;}
+/**comment.jsp**/
+.maincomment{border:solid 1px #eeeeee;width:880px;margin:0 auto;background-color:#FFFFFF;
+            height:auto;display:inline-block !important; display:inline; }
+.maincomment .answer{border:solid 1px #ffffff;top:20px;position:relative;left:15px;width:850px;} 
+.maincomment .topic{border:solid 1px #eeeeee;height:60px;}
+.maincomment .topic .title{font-size:24px;position:relative;margin-top:20px;font-weight:bold;}
+.maincomment .topic .photo img{width:45px;height:45px;border-radius:50%}
+.maincomment .topic .photo{position:absolute;width:45px;height:45px;margin:5px;border-radius:50%}
+.maincomment .topic .username{border:solid 1px ffffff;position:absolute;width:80px;height:40px;margin-left:55px;margin-top:10px;}
+.maincomment .topic .us1{font-size:14px;}
+.commentinput{border:solid 1px #eeeeee;position:relative;margin:0 auto;height:58px;background-color:#ffffff;width:880px;}
+.comContext{border:solid 1px #ffffff;position:relative;margin:0 auto;height:68px;background-color:#ffffff;width:880px;}
+.comContext .title{font-size:18px;margin-left:150px;position:absolute;margin-top:18px;}
+.comContext .photo img{width:45px;height:45px;border-radius:50%}
+.comContext .photo{position:absolute;width:45px;height:45px;margin:5px;border-radius:50%}
+.comContext .username{border:solid 1px ffffff;position:absolute;width:80px;height:40px;margin-left:55px;margin-top:10px;}
+.comContext .us1{font-size:14px;}
+.comContext .time{font-size:12px;position:absolute;top:50px;left:730px;}
+.allCon{background-color:#ffffff;position:relative;margin:0 auto;width:880px;border:solid 1px #eeeeee;}
+.commentinput .conTitle{position:absolute;top:15px;left:20px;}
+.commentinput .con{top:13px;position:absolute;left:100px;}
+.commentinput .sub{top:13px;position:absolute;left:700px;background-color:#3366ff;color:#ffffff; border: 1px solid #ffffff;width:90px;height:30px;font-size:16px;}
+
+/**quesandanswer**/
+.mainques{position:relative;border:solid 1px #eeeeee;width:880px;height:600px;margin:0 auto;background-color:#ffffff;}
+.mainques .quesform input{margin:40px;}	
+.mainques .quesform .ques{width:640px;height:40px;}
+.mainques .quesform .sub {position:relative;left:260px;background-color:#3366ff;color:#ffffff; border: 1px solid #ffffff;width:90px;height:30px;font-size:16px;}

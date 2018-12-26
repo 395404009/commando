@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl.mapper.QuesevalMapper" >
+<!-- 查询所有用户的问题 -->
+   <resultMap type="queseval" id="mymap">
+     <id column="qid" property="qid"/>
+    <id column="eid" property="eid"/> 
+     <association property="users" javaType="users"> 
+      <id column="userid" property="userid"/> 
+      <result column="username" property="username"/> 
+      <result column="pwd" property="pwd"/> 
+      <result column="photofile" property="photofile"/> 
+      <result column="usex" property="usex"/>
+    </association> 
+    <association property="evaluates" javaType="evaluates">
+      <id column="eid" property="eid"/>
+      <result column="context" property="context"/>
+       <result column="time" property="time"/>
+    </association>
+   </resultMap>
+   <select id="selCommentByQid" resultMap="mymap">
+       select * from queseval qs left join evaluates ev on qs.eid=ev.eid 
+     left join questions q on qs.qid=q.qid left join 
+     usereval ue on ev.eid=ue.eid left join users us on us.userid=ue.userid 
+     where q.qid=#{qid}
+   </select>
+
+</mapper>

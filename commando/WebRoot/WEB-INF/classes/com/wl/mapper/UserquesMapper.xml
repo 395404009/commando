@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl.mapper.UserquesMapper" >
+<!-- 查询所有用户的问题 -->
+   <resultMap type="userques" id="mymap">
+     <id column="userid" property="userid"/>
+    <id column="qid" property="qid"/> 
+     <association property="users" javaType="users"> 
+      <id column="userid" property="userid"/> 
+      <result column="username" property="username"/> 
+      <result column="pwd" property="pwd"/> 
+      <result column="photofile" property="photofile"/> 
+      <result column="usex" property="usex"/>
+    </association> 
+    <association property="questions" javaType="questions">
+      <id column="qid" property="qid"/>
+      <result column="question" property="question"/>
+      <result column="answer" property="answer"/>
+    </association>
+   </resultMap>
+   <select id="selAllQuestions" resultMap="mymap">
+     select us.*,u.photofile,u.pwd,u.userid,u.username,u.usex,q.question,q.answer from userques us left join users u on u.userid=us.userid 
+     left join questions q on us.qid=q.qid
+   </select>
+<!--    查询登录用户的所有信息 -->
+  <resultMap type="userques" id="mymap1">
+     <id column="userid" property="userid"/>
+     <id column="qid" property="qid"/> 
+     <association property="users" javaType="users"> 
+      <id column="userid" property="userid"/> 
+      <result column="username" property="username"/> 
+      <result column="pwd" property="pwd"/> 
+      <result column="photofile" property="photofile"/> 
+      <result column="usex" property="usex"/>
+    </association> 
+    <association property="questions" javaType="questions">
+      <id column="qid" property="qid"/>
+      <result column="question" property="question"/>
+      <result column="answer" property="answer"/>
+    </association>
+   </resultMap>
+    <select id="selAllMyQuestion" resultMap="mymap1">
+     select * from userques uq left join users us on uq.userid=us.userid left join 
+     questions ques on ques.qid=uq.qid where us.userid=#{userid}
+   </select>
+</mapper>
